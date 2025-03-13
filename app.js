@@ -13,7 +13,6 @@ function adicionarAmigo() {
     amigos.push(nome);
     input.value = "";
 }
-
 //Função 2
 function atualizarLista() {
     let lista = document.getElementById("listaAmigos");
@@ -24,5 +23,18 @@ function atualizarLista() {
         item.textContent = amigo;
         lista.appendChild(item);
     }
+}
+//Função 3
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("Adicione amigos antes de sortear!");
+        return;
+    }
+
+    let indiceSorteado = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[indiceSorteado];
+
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = `<li>${amigoSorteado}</li>`;
 }
 
